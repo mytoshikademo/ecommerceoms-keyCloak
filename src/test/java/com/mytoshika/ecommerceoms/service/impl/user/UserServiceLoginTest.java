@@ -1,8 +1,9 @@
-package com.mytoshika.ecommerceoms.service.impl;
+package com.mytoshika.ecommerceoms.service.impl.user;
 
 import com.mytoshika.ecommerceoms.dto.LoginRequest;
 import com.mytoshika.ecommerceoms.dto.LoginResponse;
 import com.mytoshika.ecommerceoms.dto.TokenResponse;
+import com.mytoshika.ecommerceoms.service.impl.UserServiceImpl;
 import com.mytoshika.ecommerceoms.service.interfaces.KeycloakUserService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

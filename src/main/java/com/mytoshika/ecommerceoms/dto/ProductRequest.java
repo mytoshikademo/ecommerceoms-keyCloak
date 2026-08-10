@@ -6,11 +6,13 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.PositiveOrZero;
 import jdk.jfr.Description;
+import lombok.Builder;
 import lombok.Data;
 
 import javax.management.Descriptor;
 import java.math.BigDecimal;
 
+@Builder
 @Data
 public class ProductRequest {
 

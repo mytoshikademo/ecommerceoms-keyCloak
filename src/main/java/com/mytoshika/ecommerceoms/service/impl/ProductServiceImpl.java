@@ -11,6 +11,7 @@ import com.mytoshika.ecommerceoms.repository.InventoryRepository;
 import com.mytoshika.ecommerceoms.repository.ProductRepository;
 import com.mytoshika.ecommerceoms.repository.UserRepository;
 import com.mytoshika.ecommerceoms.service.interfaces.ProductService;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
@@ -74,14 +75,12 @@ public class ProductServiceImpl implements ProductService {
     @Transactional
     public ProductResponse createProduct(ProductRequest dto) {
         log.info("Creating product with name: {}", dto.getName());
-        if(productRepo.existsByNameIgnoreCase(dto.getName())){
-            log.error("Product already exists with name: {}", dto.getName());
-            throw new ProductNameConflictException("Product name already exists");
-        }
+        validateNameExist(dto.getName());
         Product product = createProductEntity(dto);
         Inventory inventory = createInventoryEntity(dto, product);
         return mapToProductResponse(product,inventory);
     }
+
 
     @Caching(
             put = {@CachePut(cacheNames = "product",key="#id"),},
@@ -294,5 +293,11 @@ public class ProductServiceImpl implements ProductService {
         User user = userRepository.findByKeycloakUserId(keycloakUserId)
                 .orElseThrow(() -> new ResourceNotFoundException("User not found"));
         return user.getId();
+    }
+    private void validateNameExist(String name) {
+        if(productRepo.existsByNameIgnoreCase(name)){
+            log.error("Product already exists with name: {}", name);
+            throw new ProductNameConflictException("Product name already exists");
+        }
     }
 }

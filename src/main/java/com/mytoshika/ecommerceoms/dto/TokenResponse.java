@@ -1,9 +1,13 @@
 package com.mytoshika.ecommerceoms.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Builder;
 import lombok.Data;
+import org.springframework.boot.autoconfigure.info.ProjectInfoProperties;
+
 
 @Data
+@Builder
 public class TokenResponse {
 
     @JsonProperty("access_token")

@@ -1,10 +1,11 @@
-package com.mytoshika.ecommerceoms.service.impl;
+package com.mytoshika.ecommerceoms.service.impl.user;
 
 import com.mytoshika.ecommerceoms.dto.UserRequest;
 import com.mytoshika.ecommerceoms.dto.UserResponse;
 import com.mytoshika.ecommerceoms.entity.User;
 import com.mytoshika.ecommerceoms.exception.EmailAlreadyExistsException;
 import com.mytoshika.ecommerceoms.repository.UserRepository;
+import com.mytoshika.ecommerceoms.service.impl.UserServiceImpl;
 import com.mytoshika.ecommerceoms.service.interfaces.EmailService;
 import com.mytoshika.ecommerceoms.service.interfaces.KeycloakUserService;
 import org.junit.jupiter.api.Test;

@@ -1,10 +1,11 @@
-package com.mytoshika.ecommerceoms.service.impl;
+package com.mytoshika.ecommerceoms.service.impl.user;
 
 import com.mytoshika.ecommerceoms.dto.UserResponse;
 import com.mytoshika.ecommerceoms.entity.User;
 import com.mytoshika.ecommerceoms.exception.AccessDeniedException;
 import com.mytoshika.ecommerceoms.exception.ResourceNotFoundException;
 import com.mytoshika.ecommerceoms.repository.UserRepository;
+import com.mytoshika.ecommerceoms.service.impl.UserServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

@@ -8,6 +8,7 @@ import org.hibernate.annotations.SoftDelete;
 
 import java.time.LocalDate;
 
+@Builder
 @Getter
 @Setter
 @NoArgsConstructor

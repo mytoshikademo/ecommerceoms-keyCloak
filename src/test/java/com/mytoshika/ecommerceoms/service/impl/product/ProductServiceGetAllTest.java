@@ -8,7 +8,6 @@ import com.mytoshika.ecommerceoms.repository.ProductRepository;
 import com.mytoshika.ecommerceoms.service.impl.ProductServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.junit.jupiter.api.function.Executable;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -26,18 +25,10 @@ import static org.mockito.Mockito.*;
 @ExtendWith(MockitoExtension.class)
 class ProductServiceGetAllTest {
 
-    @Mock
-    private ModelMapper mapper;
-
-    @Mock
-    private ProductRepository productRepo;
-
-    @Mock
-    private InventoryRepository inventoryRepo;
-
-    @InjectMocks
-    private ProductServiceImpl productService;
-
+    @Mock private ModelMapper mapper;
+    @Mock private ProductRepository productRepo;
+    @Mock private InventoryRepository inventoryRepo;
+    @InjectMocks private ProductServiceImpl productService;
 
     @Test
     void shouldGetAllProductsSuccessfully() {
